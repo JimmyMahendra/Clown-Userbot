@@ -13,10 +13,10 @@ from userbot import (
     BL_CHAT,
     CMD_HANDLER,
     CMD_LIST,
-    KYY2,
-    KYY3,
-    KYY4,
-    KYY5,
+    CLOWN2,
+    CLOWN3,
+    CLOWN4,
+    CLOWN5,
     LOAD_PLUG,
     SUDO_HANDLER,
     SUDO_USERS,
@@ -25,7 +25,7 @@ from userbot import (
 )
 
 
-def kyy_cmd(
+def clown_cmd(
     pattern: str = None,
     allow_sudo: bool = True,
     disable_edited: bool = False,
@@ -48,25 +48,25 @@ def kyy_cmd(
         args["chats"] = black_list_chats
 
     if pattern is not None:
-        global kyy_reg
+        global clown_reg
         global sudo_reg
         if (
             pattern.startswith(r"\#")
             or not pattern.startswith(r"\#")
             and pattern.startswith(r"^")
         ):
-            kyy_reg = sudo_reg = re.compile(pattern)
+            clown_reg = sudo_reg = re.compile(pattern)
         else:
-            kyy_ = "\\" + CMD_HANDLER
+            clown_ = "\\" + CMD_HANDLER
             sudo_ = "\\" + SUDO_HANDLER
-            kyy_reg = re.compile(kyy_ + pattern)
+            clown_reg = re.compile(clown_ + pattern)
             sudo_reg = re.compile(sudo_ + pattern)
             if command is not None:
-                cmd1 = kyy_ + command
+                cmd1 = clown_ + command
                 cmd2 = sudo_ + command
             else:
                 cmd1 = (
-                    (kyy_ +
+                    (clown_ +
                      pattern).replace(
                         "$",
                         "").replace(
@@ -90,9 +90,9 @@ def kyy_cmd(
             if not disable_edited:
                 bot.add_event_handler(
                     func, events.MessageEdited(
-                        **args, outgoing=True, pattern=kyy_reg))
+                        **args, outgoing=True, pattern=clown_reg))
             bot.add_event_handler(
-                func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
+                func, events.NewMessage(**args, outgoing=True, pattern=clown_reg)
             )
         if bot:
             if allow_sudo:
@@ -110,37 +110,37 @@ def kyy_cmd(
                         **args, from_users=list(SUDO_USERS), pattern=sudo_reg
                     ),
                 )
-        if KYY2:
+        if CLOWN2:
             if not disable_edited:
-                KYY2.add_event_handler(
+                CLOWN2.add_event_handler(
                     func, events.MessageEdited(
-                        **args, outgoing=True, pattern=kyy_reg))
-            KYY2.add_event_handler(
-                func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
+                        **args, outgoing=True, pattern=clown_reg))
+            CLOWN2.add_event_handler(
+                func, events.NewMessage(**args, outgoing=True, pattern=clown_reg)
             )
-        if KYY3:
+        if CLOWN3:
             if not disable_edited:
-                KYY3.add_event_handler(
+                CLOWN3.add_event_handler(
                     func, events.MessageEdited(
-                        **args, outgoing=True, pattern=kyy_reg))
-            KYY3.add_event_handler(
-                func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
+                        **args, outgoing=True, pattern=clown_reg))
+            CLOWN3.add_event_handler(
+                func, events.NewMessage(**args, outgoing=True, pattern=clown_reg)
             )
-        if KYY4:
+        if CLOWN4:
             if not disable_edited:
-                KYY4.add_event_handler(
+                CLOWN4.add_event_handler(
                     func, events.MessageEdited(
-                        **args, outgoing=True, pattern=kyy_reg))
-            KYY4.add_event_handler(
-                func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
+                        **args, outgoing=True, pattern=clown_reg))
+            CLOWN4.add_event_handler(
+                func, events.NewMessage(**args, outgoing=True, pattern=clown_reg)
             )
-        if KYY5:
+        if CLOWN5:
             if not disable_edited:
-                KYY5.add_event_handler(
+                CLOWN5.add_event_handler(
                     func, events.MessageEdited(
-                        **args, outgoing=True, pattern=kyy_reg))
-            KYY5.add_event_handler(
-                func, events.NewMessage(**args, outgoing=True, pattern=kyy_reg)
+                        **args, outgoing=True, pattern=clown_reg))
+            CLOWN5.add_event_handler(
+                func, events.NewMessage(**args, outgoing=True, pattern=clown_reg)
             )
         try:
             LOAD_PLUG[file_test].append(func)
@@ -151,20 +151,20 @@ def kyy_cmd(
     return decorator
 
 
-def kyy_handler(
+def clown_handler(
     **args,
 ):
     def decorator(func):
         if bot:
             bot.add_event_handler(func, events.NewMessage(**args))
-        if KYY2:
-            KYY2.add_event_handler(func, events.NewMessage(**args))
-        if KYY3:
-            KYY3.add_event_handler(func, events.NewMessage(**args))
-        if KYY4:
-            KYY4.add_event_handler(func, events.NewMessage(**args))
-        if KYY5:
-            KYY5.add_event_handler(func, events.NewMessage(**args))
+        if CLOWN2:
+            CLOWN2.add_event_handler(func, events.NewMessage(**args))
+        if CLOWN3:
+            CLOWN3.add_event_handler(func, events.NewMessage(**args))
+        if CLOWN4:
+            CLOWN4.add_event_handler(func, events.NewMessage(**args))
+        if CLOWN5:
+            CLOWN5.add_event_handler(func, events.NewMessage(**args))
         return func
 
     return decorator
@@ -189,14 +189,14 @@ def chataction(**args):
     def decorator(func):
         if bot:
             bot.add_event_handler(func, events.ChatAction(**args))
-        if KYY2:
-            KYY2.add_event_handler(func, events.ChatAction(**args))
-        if KYY3:
-            KYY3.add_event_handler(func, events.ChatAction(**args))
-        if KYY4:
-            KYY4.add_event_handler(func, events.ChatAction(**args))
-        if KYY5:
-            KYY5.add_event_handler(func, events.ChatAction(**args))
+        if CLOWN2:
+            CLOWN2.add_event_handler(func, events.ChatAction(**args))
+        if CLOWN3:
+            CLOWN3.add_event_handler(func, events.ChatAction(**args))
+        if CLOWN4:
+            CLOWN4.add_event_handler(func, events.ChatAction(**args))
+        if CLOWN5:
+            CLOWN5.add_event_handler(func, events.ChatAction(**args))
         return func
 
     return decorator
