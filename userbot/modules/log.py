@@ -1,6 +1,6 @@
 # credits: mrconfused
-# Recode by @mrismanaziz
-# t.me/SharingUserbot
+# Recode by @kepoinvann
+# https://t.me/ClownSupport
 
 import asyncio
 
@@ -122,7 +122,7 @@ async def log_tagged_messages(yahaha):
         )
 
 
-@kyy_cmd(pattern="save(?: |$)(.*)")
+@clown_cmd(pattern="save(?: |$)(.*)")
 async def log(log_text):
     if BOTLOG_CHATID:
         if log_text.reply_to_msg_id:
@@ -144,7 +144,7 @@ async def log(log_text):
         )
 
 
-@kyy_cmd(pattern="log$")
+@clown_cmd(pattern="log$")
 async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
@@ -155,7 +155,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@kyy_cmd(pattern="nolog$")
+@clown_cmd(pattern="nolog$")
 async def set_no_log_p_m(event):
     if BOTLOG_CHATID != -100:
         chat = await event.get_chat()
@@ -166,7 +166,7 @@ async def set_no_log_p_m(event):
             )
 
 
-@kyy_cmd(pattern="pmlog (on|off)$")
+@clown_cmd(pattern="pmlog (on|off)$")
 async def set_pmlog(event):
     if BOTLOG_CHATID == -100:
         return await edit_delete(
@@ -196,7 +196,7 @@ async def set_pmlog(event):
         await edit_or_reply(event, "**PM LOG Sudah Dimatikan**")
 
 
-@kyy_cmd(pattern="gruplog (on|off)$")
+@clown_cmd(pattern="gruplog (on|off)$")
 async def set_gruplog(event):
     if BOTLOG_CHATID == -100:
         return await edit_delete(
