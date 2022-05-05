@@ -27,9 +27,9 @@ def vcmention(user):
     return f"[{full_name}](tg://user?id={user.id})"
 
 
-async def get_call(kyy):
-    kyym = await kyy.client(getchat(kyy.chat_id))
-    hehe = await kyy.client(getvc(kyym.full_chat.call, limit=1))
+async def get_call(clown):
+    tarom = await clown.client(getchat(clown.chat_id))
+    hehe = await clown.client(getvc(tarom.full_chat.call, limit=1))
     return hehe.call
 
 
@@ -73,21 +73,21 @@ async def stop_voice(c):
 
 
 @clown_cmd(pattern="vcinvite")
-async def _(kyy):
-    await edit_or_reply(kyy, "`Sedang Menginvite Member...`")
+async def _(clown):
+    await edit_or_reply(clown, "`Sedang Menginvite Member...`")
     users = []
     z = 0
-    async for x in kyy.client.iter_participants(kyy.chat_id):
+    async for x in clown.client.iter_participants(clown.chat_id):
         if not x.bot:
             users.append(x.id)
     hmm = list(user_list(users, 6))
     for p in hmm:
         try:
-            await kyy.client(invitetovc(call=await get_call(kyy), users=p))
+            await clown.client(invitetovc(call=await get_call(clown), users=p))
             z += 6
         except BaseException:
             pass
-    await edit_or_reply(kyy, f"`Menginvite {z} Member`")
+    await edit_or_reply(clown, f"`Menginvite {z} Member`")
 
 
 @clown_cmd(pattern="vctitle(?: |$)(.*)")
