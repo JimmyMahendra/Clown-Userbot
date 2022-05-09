@@ -28,36 +28,36 @@ LOG_CHATS_ = LOG_CHATS()
 
 
 @bot.on(events.ChatAction)
-async def logaddjoin(kyy):
-    user = await kyy.get_user()
-    chat = await kyy.get_chat()
+async def logaddjoin(clown):
+    user = await clown.get_user()
+    chat = await clown.get_chat()
     if not (user and user.is_self):
         return
     if hasattr(chat, "username") and chat.username:
-        chat = f"[{chat.title}](https://t.me/{chat.username}/{kyy.action_message.id})"
+        chat = f"[{chat.title}](https://t.me/{chat.username}/{clown.action_message.id})"
     else:
-        chat = f"[{chat.title}](https://t.me/c/{chat.id}/{kyy.action_message.id})"
-    if kyy.user_added:
-        tmp = kyy.added_by
+        chat = f"[{chat.title}](https://t.me/c/{chat.id}/{clown.action_message.id})"
+    if clown.user_added:
+        tmp = clown.added_by
         text = f"u📩 **#TAMBAH_LOG\n •** {vcmention(tmp)} **Menambahkan** {vcmention(user)}\n **• Ke Group** {chat}"
-    elif kyy.user_joined:
+    elif clown.user_joined:
         text = f"📨 **#LOG_GABUNG\n •** [{user.first_name}](tg://user?id={user.id}) **Bergabung\n • Ke Group** {chat}"
     else:
         return
-    await kyy.client.send_message(BOTLOG_CHATID, text)
+    await clown.client.send_message(BOTLOG_CHATID, text)
 
 
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private))
 @bot.on(events.MessageEdited(incoming=True, func=lambda e: e.is_private))
-async def monito_p_m_s(kyy):
+async def monito_p_m_s(clown):
     if BOTLOG_CHATID == -100:
         return
     if gvarstatus("PMLOG") and gvarstatus("PMLOG") == "false":
         return
-    sender = await kyy.get_sender()
+    sender = await clown.get_sender()
     await asyncio.sleep(0.5)
     if not sender.bot:
-        chat = await kyy.get_chat()
+        chat = await clown.get_chat()
         if not no_log_pms_sql.is_approved(chat.id) and chat.id != 777000:
             if LOG_CHATS_.RECENT_USER != chat.id:
                 LOG_CHATS_.RECENT_USER = chat.id
@@ -69,14 +69,14 @@ async def monito_p_m_s(kyy):
                         )
                     )
                     LOG_CHATS_.COUNT = 0
-                LOG_CHATS_.NEWPM = await kyy.client.send_message(
+                LOG_CHATS_.NEWPM = await clown.client.send_message(
                     BOTLOG_CHATID,
                     f"**💌 #MENERUSKAN #PESAN_BARU**\n** • Dari : **{_format.mentionuser(sender.first_name , sender.id)}\n** • User ID:** `{chat.id}`",
                 )
             try:
-                if kyy.message:
-                    await kyy.client.forward_messages(
-                        BOTLOG_CHATID, kyy.message, silent=True
+                if clown.message:
+                    await clown.client.forward_messages(
+                        BOTLOG_CHATID, clown.message, silent=True
                     )
                 LOG_CHATS_.COUNT += 1
             except Exception as e:
