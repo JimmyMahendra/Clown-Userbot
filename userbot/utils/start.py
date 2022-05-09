@@ -13,8 +13,8 @@ async def startupmessage():
             await tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/02f87cca391f9b9d627d5.jpg",
-                caption="✨ **Kyy Userbot Has Been Actived**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 8.0@master\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @NastyProject ",
-                buttons=[(Button.url("ꜱᴜᴘᴘᴏʀᴛ", "https://t.me/NastySupportt"),)],
+                caption="🤡 **Clown - Userbot Has Been Actived**!!\n━━━━━━━━━━━━━━━\n➠ **Userbot Version** - 8.0@master\n━━━━━━━━━━━━━━━\n➠ **Powered By:** @ChannelClown ",
+                buttons=[(Button.url("Support", "https://t.me/ClownSupportt"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -22,9 +22,9 @@ async def startupmessage():
 
 
 async def checking(client):
-    gcsp = str(pybase64.b64decode("QE5hc3R5UHJvamVjdA=="))[2:15]
-    chsp = str(pybase64.b64decode("QE5hc3R5U3VwcG9ydHQ="))[2:16]
-    chgbt = str(pybase64.b64decode("QGFoaHN1ZGFobGFoaGg="))[2:16]
+    gcsp = str(pybase64.b64decode("QENsb3duU3VwcG9ydA=="))[2:14]
+    chsp = str(pybase64.b64decode("QENoYW5uZWxDbG93bg=="))[2:14]
+    chgbt = str(pybase64.b64decode("QGRpc2luaWNlcml0YWE="))[2:15]
     if client:
         try:
             await client(Invt(gcsp))
