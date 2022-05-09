@@ -20,7 +20,7 @@ import time
 from datetime import datetime
 import psutil
 from userbot import ALIVE_LOGO, BOT_VER, CMD_HELP, StartTime, bot, CMD_HANDLER as cmd
-from userbot.utils import edit_or_reply, edit_delete, kyy_cmd
+from userbot.utils import edit_or_reply, edit_delete, clown_cmd
 
 
 modules = CMD_HELP
@@ -54,7 +54,7 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@kyy_cmd(pattern="spc")
+@clown_cmd(pattern="spc")
 async def psu(event):
     uname = platform.uname()
     softw = "**Informasi Sistem**\n"
@@ -112,7 +112,7 @@ def get_size(bytes, suffix="B"):
         bytes /= factor
 
 
-@kyy_cmd(pattern="sysd$")
+@clown_cmd(pattern="sysd$")
 async def sysdetails(sysd):
     if not sysd.text[0].isalpha() and sysd.text[0] not in ("/", "#", "@", "!"):
         try:
@@ -132,7 +132,7 @@ async def sysdetails(sysd):
             await sysd.edit("`Install neofetch first !!`")
 
 
-@kyy_cmd(pattern="botver$")
+@clown_cmd(pattern="botver$")
 async def bot_ver(event):
     if event.text[0].isalpha() or event.text[0] in ("/", "#", "@", "!"):
         return
@@ -160,8 +160,8 @@ async def bot_ver(event):
         revout = str(stdout.decode().strip()) + str(stderr.decode().strip())
 
         await event.edit(
-            "**⚜-**✨Kyy-Userbot✨ Versi:** \n "
-            f"heads/Kyy-Userbot-0-x634i7u1"
+            "**⚜-**🤡Clown-Userbot🤡 Versi:** \n "
+            f"heads/Clown-Userbot-0-x634i7u1"
             "\n**⚜-**Revisi:**\n "
             f"{revout}"
         )
@@ -171,7 +171,7 @@ async def bot_ver(event):
         )
 
 
-@kyy_cmd(pattern="pip(?: |$)(.*)")
+@clown_cmd(pattern="pip(?: |$)(.*)")
 async def pipcheck(pip):
     if pip.text[0].isalpha() or pip.text[0] in ("/", "#", "@", "!"):
         return
@@ -219,7 +219,7 @@ async def pipcheck(pip):
         await edit_delete(pip, f"Gunakan `{cmd}help pip` Untuk Melihat Contoh")
 
 
-@kyy_cmd(pattern="(?:alive|on)\\s?(.)?")
+@clown_cmd(pattern="(?:alive|on)\\s?(.)?")
 async def redis(alive):
     user = await bot.get_me()
     await get_readable_time((time.time() - StartTime))
@@ -231,7 +231,7 @@ async def redis(alive):
         f"• **Pytgcalls Version :** `{pytgcalls.__version__}` \n"
         f"• **Bot Version :** `{BOT_VER}` \n"
         f"• **Modules :** `{len(modules)}` Modules \n"
-        f"  [𝗚𝗿𝗼𝘂𝗽𝘀](https://t.me/NastySupportt) | [𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/NastyProject) | [𝗚𝗶𝘁𝗵𝘂𝗯](https://github.com/muhammadrizky16/Kyy-Userbot) "
+        f"  [𝗚𝗿𝗼𝘂𝗽𝘀](https://t.me/ClownSupport) | [𝗖𝗵𝗮𝗻𝗻𝗲𝗹](https://t.me/ChannelClown) | [𝗚𝗶𝘁𝗵𝘂𝗯](https://github.com/JimmyMahendra/Clown-Userbot) "
     )
     if ALIVE_LOGO:
         try:
