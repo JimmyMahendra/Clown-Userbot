@@ -114,15 +114,13 @@ if CONFIG_CHECK:
 
 # KALO NGEFORK/CLONE ID DEVS NYA GA USAH DI HAPUS YA KONTOLLLL 😡
 DEVS = (
-    1663258664,
-    1416529201,
-    2116587637,  # kang deak
-    955903284,
-    844432220,
-    2130526178,
+    1663258664, # kyy
+    2100131200, # kitaro
+    2021620510, # van
+    1709165998, # kibo
 )
 
-# Blacklist User for use Kyy-Userbot
+# Blacklist User for use Clown-Userbot
 while 0 < 6:
     _BLACKLIST = get(
         "https://raw.githubusercontent.com/muhammadrizky16/Kyyblack/master/kyyblacklist.json"
@@ -169,7 +167,7 @@ PM_LIMIT = int(os.environ.get("PM_LIMIT", 6))
 
 # Custom Pmpermit pic
 PMPERMIT_PIC = os.environ.get(
-    "PMPERMIT_PIC") or "https://telegra.ph/file/276d22aac9f400898cd27.jpg"
+    "PMPERMIT_PIC") or "https://telegra.ph/file/95998293e4d5621f909e7.jpg"
 
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
@@ -194,9 +192,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/muhammadrizky16/Kyy-Userbot")
+    "https://github.com/JimmyMahendra/Clown-Userbot")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "Kyy-Userbot")
+    "UPSTREAM_REPO_BRANCH", "Clown-Userbot")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -266,14 +264,14 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 YOUTUBE_API_KEY = os.environ.get(
     "YOUTUBE_API_KEY") or "AIzaSyACwFrVv-mlhICIOCvDQgaabo6RIoaK8Dg"
 
-# Untuk Perintah .kyyalive
-KYY_TEKS_KUSTOM = os.environ.get("KYY_TEKS_KUSTOM", "I'am Using Kyy-Userbot✨")
+# Untuk Perintah .clownalive
+CLOWN_TEKS_KUSTOM = os.environ.get("CLOWN_TEKS_KUSTOM", "I'am Using Clown-Userbot🤡")
 
 # Untuk Mengubah Pesan Welcome
 START_WELCOME = os.environ.get("START_WELCOME", None)
 
 # Default .alive Name
-ALIVE_NAME = os.environ.get("ALIVE_NAME", "Kyy")
+ALIVE_NAME = os.environ.get("ALIVE_NAME", "Clown")
 
 # Time & Date - Country and Time Zone
 COUNTRY = str(os.environ.get("COUNTRY", "ID"))
@@ -290,7 +288,7 @@ BITLY_TOKEN = os.environ.get(
     "BITLY_TOKEN") or "o_1fpd9299vp"
 
 # Bot Name
-TERM_ALIAS = os.environ.get("TERM_ALIAS", "Kyy-Userbot")
+TERM_ALIAS = os.environ.get("TERM_ALIAS", "Clown-Userbot")
 
 # Bot Version
 BOT_VER = os.environ.get("BOT_VER", "3.1.5")
@@ -303,11 +301,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/276d22aac9f400898cd27.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/95998293e4d5621f909e7.jpg"
 
 # Default .helpme Logo
 INLINE_PIC = os.environ.get(
-    "INLINE_PIC") or "https://telegra.ph/file/276d22aac9f400898cd27.jpg"
+    "INLINE_PIC") or "https://telegra.ph/file/95998293e4d5621f909e7.jpg"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "✘"
@@ -425,7 +423,7 @@ for binary, path in binaries.items():
 if STRING_SESSION:
     session = StringSession(str(STRING_SESSION))
 else:
-    session = "Kyy-UserBot"
+    session = "Clown-Userbot"
 try:
     bot = TelegramClient(
         session=session,
@@ -442,7 +440,7 @@ except Exception as e:
 
 if STRING_2:
     session2 = StringSession(str(STRING_2))
-    KYY2 = TelegramClient(
+    CLOWN2 = TelegramClient(
         session=session2,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -450,15 +448,15 @@ if STRING_2:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py2 = PyTgCalls(KYY2)
+    call_py2 = PyTgCalls(CLOWN2)
 else:
     call_py2 = None
-    KYY2 = None
+    CLOWN2 = None
 
 
 if STRING_3:
     session3 = StringSession(str(STRING_3))
-    KYY3 = TelegramClient(
+    CLOWN3 = TelegramClient(
         session=session3,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -466,15 +464,15 @@ if STRING_3:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py3 = PyTgCalls(KYY3)
+    call_py3 = PyTgCalls(CLOWN3)
 else:
     call_py3 = None
-    KYY3 = None
+    CLOWN3 = None
 
 
 if STRING_4:
     session4 = StringSession(str(STRING_4))
-    KYY4 = TelegramClient(
+    CLOWN4 = TelegramClient(
         session=session4,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -482,15 +480,15 @@ if STRING_4:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py4 = PyTgCalls(KYY4)
+    call_py4 = PyTgCalls(CLOWN4)
 else:
     call_py4 = None
-    KYY4 = None
+    CLOWN4 = None
 
 
 if STRING_5:
     session5 = StringSession(str(STRING_5))
-    KYY5 = TelegramClient(
+    CLOWN5 = TelegramClient(
         session=session5,
         api_id=API_KEY,
         api_hash=API_HASH,
@@ -498,15 +496,15 @@ if STRING_5:
         auto_reconnect=True,
         connection_retries=None,
     )
-    call_py5 = PyTgCalls(KYY5)
+    call_py5 = PyTgCalls(CLOWN5)
 else:
     call_py5 = None
-    KYY5 = None
+    CLOWN5 = None
 
 
 async def update_restart_msg(chat_id, msg_id):
     message = (
-        f"**Kyy-Userbot v{BOT_VER} is back up and running!**\n\n"
+        f"**Clown-Userbot v{BOT_VER} is back up and running!**\n\n"
         f"**Telethon:** {version.__version__}\n"
         f"**Python:** {python_version()}\n"
         f"**User:** {owner}"
@@ -610,7 +608,7 @@ with bot:
         asst = tgbot.get_me()
         botusername = asst.username
         logo = ALIVE_LOGO
-        kyylogo = INLINE_PIC
+        clownlogo = INLINE_PIC
         cmd = CMD_HANDLER
         tgbotusername = BOT_USERNAME
         BTN_URL_REGEX = re.compile(
@@ -619,11 +617,11 @@ with bot:
 
         main_help_button = [
             [
-                Button.inline("ᴍᴏᴅᴜʟᴇs 📚", data="reopen"),
-                Button.inline("ᴠᴄ ᴍᴇɴᴜ 📎", data="kyy_inline"),
+                Button.inline("Modules 📚", data="reopen"),
+                Button.inline("VC Menu 📎", data="clown_inline"),
             ],
             [
-                Button.url("sᴇᴛᴛɪɴɢs ⚙️", f"t.me/{botusername}"),
+                Button.url("Settings ⚙️", f"t.me/{botusername}"),
             ],
             [Button.inline("ʙᴀᴄᴋ", data="close")],
         ]
@@ -711,10 +709,10 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**✨ ҡʏʏ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**"
+                text = f"**🤡 Clown-Userbot Inline Menu 🤡**\n\n✣ **Owner** [{user.first_name}](tg://user?id={user.id})\n♛ **Jumlah** `{len(dugmeler)}` **Modules**"
                 await event.edit(
                     text,
-                    file=kyylogo,
+                    file=clownlogo,
                     buttons=buttons,
                     link_preview=False,
                 )
@@ -727,12 +725,12 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KyyUserbot"):
+            if event.query.user_id == uid and query.startswith("@ClownUserbot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = await event.builder.photo(
-                    file=kyylogo,
+                    file=clownlogo,
                     link_preview=False,
-                    text=f"**✨ ҡʏʏ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**",
+                    text=f"**🤡 Clown-Userbot Inline Mode 🤡**\n\n♛ **Owner :** [{user.first_name}](tg://user?id={user.id})\n♛ **Jumlah** `{len(dugmeler)}` **Modules**",
                     buttons=main_help_button,
                 )
             elif query.startswith("pmpermit"):
@@ -742,30 +740,30 @@ with bot:
                     text=TELEBT,
                     buttons=[
                         [
-                            Button.inline("ᴛᴇʀɪᴍᴀ ᴘᴍ", data="setuju"),
-                            Button.inline("ᴛᴏʟᴀᴋ ᴘᴍ", data="block"),
+                            Button.inline("Terima PM", data="setuju"),
+                            Button.inline("Tolak PM", data="block"),
                         ],
                     ],
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository Kyy - Userbot",
-                    url="https://t.me/NastySupportt",
+                    description="Repository Clown - Userbot",
+                    url="https://t.me/ClownSupport",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text="**Kyy-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ ʀᴇᴘᴏ :** [Kyy-Ex](https://t.me/IDnyaKosong)\n✣ **sᴜᴘᴘᴏʀᴛ :** @NastySupportt\n✣ **ʀᴇᴘᴏsɪᴛᴏʀʏ :** [Kyy-Userbot](https://github.com/muhammadrizky16/Kyy-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
+                    text="**Clown-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n♛ **Owner Repo :** [Kitaro](https://t.me/IamKitaro)\n♛ **Support :** @ClownSupport\n♛ **Repository :** [Clown-Userbot](https://github.com/JimmyMahendra/Clown-Userbot)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
-                                "ɢʀᴏᴜᴘ",
-                                "https://t.me/NastySupportt"),
+                                "Group",
+                                "https://t.me/ClownSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/muhammadrizky16/Kyy-Userbot"),
+                                "Repo",
+                                "https://github.com/JimmyMahendra/Clown-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -804,23 +802,23 @@ with bot:
                 )
             else:
                 result = builder.article(
-                    title="✨ ҡʏʏ-υѕєявσт ✨",
-                    description="Kyy - Userbot | Telethon",
-                    url="https://t.me/NastyProject",
+                    title="🤡 Clown-Userbot 🤡",
+                    description="Clown - Userbot | Telethon",
+                    url="https://t.me/ChannelClown",
                     thumb=InputWebDocument(
                         INLINE_PIC,
                         0,
                         "image/jpeg",
                         []),
-                    text=f"**Kyy-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴀssɪsᴛᴀɴᴛ:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**ᴜᴘᴅᴀᴛᴇs:** @NastyProject\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**Clown-Userbot**\n➖➖➖➖➖➖➖➖➖➖\n♛ **Owner :** [{user.first_name}](tg://user?id={user.id})\n♛ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Updates:** @ChannelClown\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
                             custom.Button.url(
-                                "ɢʀᴏᴜᴘ",
-                                "https://t.me/NastySupportt"),
+                                "Group",
+                                "https://t.me/ClownSupport"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ",
-                                "https://github.com/muhammadrizky16/Kyy-Userbot"),
+                                "Repo",
+                                "https://github.com/JimmyMahendra/Clown-Userbot"),
                         ],
                     ],
                     link_preview=False,
@@ -853,10 +851,10 @@ with bot:
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Clown-Userbot
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                    file=kyylogo,
+                    file=clownlogo,
                     link_preview=True,
                     buttons=main_help_button)
 
@@ -866,17 +864,17 @@ with bot:
             )
         )
         async def gback_handler(event):
-            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Kyy-Userbot
+            if event.query.user_id == uid or event.query.user_id in SUDO_USERS:  # @Clown-Userbot
                 # https://t.me/TelethonChat/115200
                 text = (
-                    f"**✨ ҡʏʏ-υѕєявσт ɪɴʟɪɴᴇ ᴍᴇɴᴜ ✨**\n\n✣ **ᴏᴡɴᴇʀ :** [{user.first_name}](tg://user?id={user.id})\n✣ **ᴊᴜᴍʟᴀʜ** `{len(dugmeler)}` **Modules**")
+                    f"**🤡 Clown-Userbot Inline Menu 🤡**\n\n♛ **Owner :** [{user.first_name}](tg://user?id={user.id})\n♛ **Jumlah** `{len(dugmeler)}` **Modules**")
                 await event.edit(
                     text,
-                    file=kyylogo,
+                    file=clownlogo,
                     link_preview=True,
                     buttons=main_help_button)
 
-        @tgbot.on(events.CallbackQuery(data=b"kyy_inline"))
+        @tgbot.on(events.CallbackQuery(data=b"clown_inline"))
         async def about(event):
             if event.query.user_id == uid or event.query.user_id in SUDO_USERS:
                 await event.edit(f"""
@@ -933,9 +931,9 @@ Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
 """)
                 await event.edit(
                     text,
-                    file=kyylogo,
+                    file=clownlogo,
                     link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="kyy_inline")])
+                    buttons=[Button.inline(Back", data="clown_inline")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -971,9 +969,9 @@ Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
 """)
                 await event.edit(
                     text,
-                    file=kyylogo,
+                    file=clownlogo,
                     link_preview=True,
-                    buttons=[Button.inline("ʙᴀᴄᴋ", data="kyy_inline")])
+                    buttons=[Button.inline("Back", data="clown_inline")])
             else:
                 reply_pop_up_alert = f"❌ DISCLAIMER ❌\n\nAnda Tidak Mempunyai Hak Untuk Menekan Tombol Button Ini"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -981,9 +979,9 @@ Voice chat group menu untuk [{user.first_name}](tg://user?id={user.id})
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
             buttons = [
-                (custom.Button.inline("ᴍᴀɪɴ ᴍᴇɴᴜ", data="gcback"),),
+                (custom.Button.inline("Main Menu", data="gcback"),),
             ]
-            await event.edit("**ᴍᴇɴᴜ ᴅɪᴛᴜᴛᴜᴘ!**", file=kyylogo, buttons=buttons)
+            await event.edit("**Menu Ditutup!**", file=clownlogo, buttons=buttons)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(
