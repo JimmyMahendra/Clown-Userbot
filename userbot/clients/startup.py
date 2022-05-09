@@ -16,10 +16,10 @@ from userbot import (
     DEVS,
     LOGS,
     LOOP,
-    KYY2,
-    KYY3,
-    KYY4,
-    KYY5,
+    CLOWN2,
+    CLOWN3,
+    CLOWN4,
+    CLOWN05,
     STRING_2,
     STRING_3,
     STRING_4,
@@ -32,23 +32,23 @@ from userbot import (
 )
 from userbot.modules.gcast import GCAST_BLACKLIST as GBL
 
-EOL = "EOL\nKyy-UserBot v{}, Copyright © 2021-2022 KYY <https://github.com/muhammadrizky16/Kyy-Userbot>"
+EOL = "EOL\nClown-UserBot v{}, Copyright © 2021-2022 CLOWN <https://github.com/JimmyMahendra/Clown-Userbot>"
 MSG_BLACKLIST = "MAKANYA GA USAH BERTINGKAH GOBLOK, USERBOT {} GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK LU."
 
 
-async def kyy_clients(client):
+async def clown_clients(client):
     client.me = await client.get_me()
     client.uid = get_peer_id(client.me)
 
 
-def multiclientkyy():
-    if 1663258664 not in DEVS:
+def multiclientclown():
+    if 2100131200 not in DEVS:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
-    if -1001380293847 not in GBL:
+    if -1001522125069 not in GBL:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
-    if 1663258664 not in DEFAULT:
+    if 2100131200 not in DEFAULT:
         LOGS.warning(EOL.format(version))
         sys.exit(1)
     failed = 0
@@ -56,7 +56,7 @@ def multiclientkyy():
         try:
             bot.start()
             call_py.start()
-            LOOP.run_until_complete(kyy_clients(bot))
+            LOOP.run_until_complete(clown_clients(bot))
             user = bot.get_me()
             name = user.first_name
             uid = user.id
@@ -71,9 +71,9 @@ def multiclientkyy():
 
     if STRING_2:
         try:
-            KYY2.start()
-            LOOP.run_until_complete(kyy_clients(KYY2))
-            user = KYY2.get_me()
+            CLOWN2.start()
+            LOOP.run_until_complete(clown_clients(CLOWN2))
+            user = CLOWN2.get_me()
             name = user.first_name
             uid = user.id
             LOGS.info(
@@ -86,9 +86,9 @@ def multiclientkyy():
 
     if STRING_3:
         try:
-            KYY3.start()
-            LOOP.run_until_complete(kyy_clients(KYY3))
-            user = KYY3.get_me()
+            CLOWN3.start()
+            LOOP.run_until_complete(clown_clients(CLOWN3))
+            user = CLOWN3.get_me()
             name = user.first_name
             uid = user.id
             LOGS.info(
@@ -101,9 +101,9 @@ def multiclientkyy():
 
     if STRING_4:
         try:
-            KYY4.start()
-            LOOP.run_until_complete(kyy_clients(KYY4))
-            user = KYY4.get_me()
+            CLOWN4.start()
+            LOOP.run_until_complete(clown_clients(CLOWN4))
+            user = CLOWN4.get_me()
             name = user.first_name
             uid = user.id
             LOGS.info(
@@ -116,9 +116,9 @@ def multiclientkyy():
 
     if STRING_5:
         try:
-            KYY5.start()
-            LOOP.run_until_complete(kyy_clients(KYY5))
-            user = KYY5.get_me()
+            CLOWN5.start()
+            LOOP.run_until_complete(clown_clients(CLOWN5))
+            user = CLOWN5.get_me()
             name = user.first_name
             uid = user.id
             LOGS.info(
