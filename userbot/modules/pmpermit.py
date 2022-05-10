@@ -13,7 +13,7 @@ from sqlalchemy.exc import IntegrityError
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import User
 from telethon import events
-from userbot.utils import edit_or_reply, edit_delete, kyy_cmd
+from userbot.utils import edit_or_reply, edit_delete, clown_cmd
 import userbot.modules.sql_helper.pm_permit_sql as pmpermit_sql
 from userbot import CMD_HANDLER as cmd
 from userbot import (
@@ -44,7 +44,7 @@ DEF_UNAPPROVED_MSG = (
     f"**Jika Anda Melakukan Spamming, Anda Akan Terblokir Otomatis!**\n"
     "╔═════════════════════╗\n"
     f"➠ 𝗢𝘄𝗻𝗲𝗿 : {owner} \n"
-    f"➠ 𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗯𝘆 𝗞𝘆𝘆-𝗨𝘀𝗲𝗿𝗯𝗼𝘁\n"
+    f"➠ 𝗣𝗲𝘀𝗮𝗻 𝗢𝘁𝗼𝗺𝗮𝘁𝗶𝘀 𝗯𝘆 𝗖𝗹𝗼𝘄𝗻-𝗨𝘀𝗲𝗿𝗯𝗼𝘁\n"
     "╚═════════════════════╝")
 # =================================================================
 
@@ -183,7 +183,7 @@ async def auto_accept(event):
                     )
 
 
-@kyy_cmd(pattern="notifoff$")
+@clown_cmd(pattern="notifoff$")
 async def notifoff(noff_event):
     """For .notifoff command, stop getting notifications from unapproved PMs."""
     try:
@@ -194,7 +194,7 @@ async def notifoff(noff_event):
     await noff_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Telah Dibisukan!`")
 
 
-@kyy_cmd(pattern="notifon$")
+@clown_cmd(pattern="notifon$")
 async def notifon(non_event):
     """For .notifoff command, get notifications from unapproved PMs."""
     try:
@@ -205,7 +205,7 @@ async def notifon(non_event):
     await non_event.edit("`Notifikasi Dari Pesan Pribadi Tidak Disetujui, Tidak Lagi Dibisukan!`")
 
 
-@kyy_cmd(pattern="(?:setuju|ok)\\s?(.)?")
+@clown_cmd(pattern="(?:setuju|ok)\\s?(.)?")
 async def approvepm(apprvpm):
     """For .ok command, give someone the permissions to PM you."""
     try:
@@ -254,7 +254,7 @@ async def approvepm(apprvpm):
         )
 
 
-@kyy_cmd(pattern="(?:tolak|nopm)\\s?(.)?")
+@clown_cmd(pattern="(?:tolak|nopm)\\s?(.)?")
 async def disapprovepm(disapprvpm):
     try:
         from userbot.modules.sql_helper.pm_permit_sql import dissprove
@@ -284,7 +284,7 @@ async def disapprovepm(disapprvpm):
         )
 
 
-@kyy_cmd(pattern="block$")
+@clown_cmd(pattern="block$")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -316,7 +316,7 @@ async def blockpm(block):
         )
 
 
-@kyy_cmd(pattern="unblock$")
+@clown_cmd(pattern="unblock$")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
@@ -333,7 +333,7 @@ async def unblockpm(unblock):
         )
 
 
-@kyy_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\\w*)")
+@clown_cmd(pattern="(set|get|reset) pm_msg(?: |$)(\\w*)")
 async def add_pmsg(cust_msg):
     """Set your own Unapproved message"""
     if not PM_AUTO_BAN:
